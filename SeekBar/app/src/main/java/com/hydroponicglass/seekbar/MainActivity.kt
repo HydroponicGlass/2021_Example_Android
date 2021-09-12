@@ -13,6 +13,11 @@ class MainActivity : AppCompatActivity() {
         var seekBar : SeekBar = findViewById(R.id.seekBar)
         var textView : TextView = findViewById(R.id.textView)
 
+        /*
+        var max = 150
+        seekBar.max = max
+        */
+
         seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener
         {
             override fun onProgressChanged(p0: SeekBar?, p1: Int, p2: Boolean) {
