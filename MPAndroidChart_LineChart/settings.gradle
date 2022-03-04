@@ -1,0 +1,2 @@
+rootProject.name = "MPAndroidChart_LineChart"
+include ':app'
