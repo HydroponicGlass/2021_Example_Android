@@ -10,10 +10,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val builder = AlertDialog.Builder(this)
+        val builder = AlertDialog.Builder(this, android.R.style.Theme_DeviceDefault_Light_Dialog_NoActionBar_MinWidth)
         builder
             .setTitle("Title")
-            .setMessage("Message")
+            .setMessage("MessageMessageMessageMessageMessageMessage")
             .setPositiveButton("Start",
                 DialogInterface.OnClickListener { dialog, id ->
                     // START THE GAME!
