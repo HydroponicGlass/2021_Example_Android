@@ -1,9 +1,7 @@
 package com.hydroponicglass.room
 
-import androidx.room.Dao
-import androidx.room.Insert
+import androidx.room.*
 import androidx.room.OnConflictStrategy.REPLACE
-import androidx.room.Query
 
 @Dao
 interface PersonDao{
@@ -12,6 +10,15 @@ interface PersonDao{
 
     @Insert(onConflict = REPLACE)
     fun Insert(personTable: PersonTable)
+
+    @Update
+    fun Update(personTable: PersonTable)
+
+    @Delete
+    fun Delete(personTable: PersonTable)
+
+    @Query("SELECT COUNT(*) FROM PersonTable")
+    fun GetCount(): Int
 
     @Query("DELETE FROM PersonTable")
     fun DeleteAll()
