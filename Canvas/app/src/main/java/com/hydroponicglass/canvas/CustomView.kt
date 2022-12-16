@@ -26,5 +26,12 @@ class CustomView(text : String, context : Context) : View(context) {
         paint.color = Color.RED
         paint.textSize = 50f
         canvas?.drawText(drawValue, 50f, 50f, paint)
+
+        val circleX = 300f
+        val circleY = 300f
+        val circleRadius = 100f
+        canvas?.drawCircle(circleX, circleY, circleRadius, paint)
+
+
     }
 }
