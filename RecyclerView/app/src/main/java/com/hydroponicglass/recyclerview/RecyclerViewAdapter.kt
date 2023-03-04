@@ -10,6 +10,8 @@ import com.hydroponicglass.recyclerview.databinding.ListItemBinding
 
 class RecyclerViewAdapter (val list : ArrayList<ListItem>) : RecyclerView.Adapter<RecyclerViewAdapter.CustomViewHolder>()
 {
+    private lateinit var itemClickListner: ItemClickListener
+
     class CustomViewHolder(val binding: ListItemBinding) : RecyclerView.ViewHolder(binding.root)
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerViewAdapter.CustomViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.list_item, parent, false)
@@ -19,10 +21,21 @@ class RecyclerViewAdapter (val list : ArrayList<ListItem>) : RecyclerView.Adapte
     override fun onBindViewHolder(holder: RecyclerViewAdapter.CustomViewHolder, position: Int) {
         holder.binding.textView1.setText(list.get(position).title1.toString())
         holder.binding.textView2.setText(list.get(position).title2.toString())
+        holder.itemView.setOnClickListener{
+            itemClickListner.onClick(it, position)
+        }
     }
 
     override fun getItemCount(): Int {
         return list.size
+    }
+
+    interface ItemClickListener {
+        fun onClick(view: View, position: Int)
+    }
+
+    fun SetOnItemClickListener(itemClickListener: ItemClickListener) {
+        this.itemClickListner = itemClickListener
     }
 
 }
