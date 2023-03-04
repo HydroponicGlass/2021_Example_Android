@@ -26,6 +26,6 @@ class MainActivity : AppCompatActivity() {
 
         recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         recyclerView.setHasFixedSize(true)
-        recyclerView.adapter = ListAdapter(list)
+        recyclerView.adapter = RecyclerViewAdapter(list)
     }
 }
